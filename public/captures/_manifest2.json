@@ -1,0 +1,226 @@
+[
+  {
+    "slug": "pet-care-medic",
+    "url": "https://petcaremedic.org/",
+    "status": "fail",
+    "err": "Page.goto: net::ERR_CONNECTION_CLOSED at https://petcaremedic.org/\nCall log:\n  - navigating to \"https://petcaremedic.org/\", waiting until \"domcontentloaded\"\n",
+    "size": 0
+  },
+  {
+    "slug": "wearnes-starchase",
+    "url": "https://wearnes-starchase.com/",
+    "status": "badpage",
+    "err": "",
+    "size": 62371
+  },
+  {
+    "slug": "jeans-wild-heart",
+    "url": "https://jeanswildheart.com/",
+    "status": "fail",
+    "err": "Page.goto: net::ERR_EMPTY_RESPONSE at https://jeanswildheart.com/\nCall log:\n  - navigating to \"https://jeanswildheart.com/\", waiting until \"domcontentloaded\"\n",
+    "size": 0
+  },
+  {
+    "slug": "classic-furniture",
+    "url": "https://classicfurniture.sg/",
+    "status": "fail",
+    "err": "Page.goto: net::ERR_EMPTY_RESPONSE at https://classicfurniture.sg/\nCall log:\n  - navigating to \"https://classicfurniture.sg/\", waiting until \"domcontentloaded\"\n",
+    "size": 0
+  },
+  {
+    "slug": "jp-pepperdine",
+    "url": "https://www.jppepperdine.com/",
+    "status": "ok",
+    "err": "",
+    "size": 775942
+  },
+  {
+    "slug": "hue-snackable-moods",
+    "url": "https://findmyhue.com/",
+    "status": "ok",
+    "err": "",
+    "size": 357263
+  },
+  {
+    "slug": "yellow-ribbon-cares",
+    "url": "https://yrcares.org.sg/",
+    "status": "fail",
+    "err": "Page.goto: net::ERR_EMPTY_RESPONSE at https://yrcares.org.sg/\nCall log:\n  - navigating to \"https://yrcares.org.sg/\", waiting until \"domcontentloaded\"\n",
+    "size": 0
+  },
+  {
+    "slug": "global-private-banker",
+    "url": "https://globalprivatebanker.net/",
+    "status": "ok",
+    "err": "",
+    "size": 17487
+  },
+  {
+    "slug": "colex-holdings",
+    "url": "https://www.colex.com.sg/",
+    "status": "ok",
+    "err": "",
+    "size": 789410
+  },
+  {
+    "slug": "greystone-advisory",
+    "url": "https://greystone.com.sg/",
+    "status": "fail",
+    "err": "Page.goto: net::ERR_EMPTY_RESPONSE at https://greystone.com.sg/\nCall log:\n  - navigating to \"https://greystone.com.sg/\", waiting until \"domcontentloaded\"\n",
+    "size": 0
+  },
+  {
+    "slug": "sunny-dental",
+    "url": "https://sunnydms.com/",
+    "status": "ok",
+    "err": "",
+    "size": 246764
+  },
+  {
+    "slug": "paracrine",
+    "url": "https://www.paracrinetherapeutics.com/",
+    "status": "ok",
+    "err": "",
+    "size": 1556198
+  },
+  {
+    "slug": "bhavinis-law",
+    "url": "https://bhavinislawpractice.com/",
+    "status": "ok",
+    "err": "",
+    "size": 716345
+  },
+  {
+    "slug": "diot-siaci",
+    "url": "https://asia.diot-siaci.com/",
+    "status": "fail",
+    "err": "Page.goto: net::ERR_EMPTY_RESPONSE at https://asia.diot-siaci.com/\nCall log:\n  - navigating to \"https://asia.diot-siaci.com/\", waiting until \"domcontentloaded\"\n",
+    "size": 0
+  },
+  {
+    "slug": "marano-furniture",
+    "url": "https://maranofurniture.com/marano-living/",
+    "status": "ok",
+    "err": "",
+    "size": 51793
+  },
+  {
+    "slug": "decor-arts",
+    "url": "https://decorarts.com.sg/",
+    "status": "fail",
+    "err": "Page.screenshot: Protocol error (Page.captureScreenshot): Unable to capture screenshot\nCall log:\n  - taking page screenshot\n  - waiting for fonts to load...\n  -",
+    "size": 0
+  },
+  {
+    "slug": "declarators",
+    "url": "https://declarators.com.sg/",
+    "status": "ok",
+    "err": "",
+    "size": 697298
+  },
+  {
+    "slug": "universal-employment",
+    "url": "https://universalmaidagency.com/",
+    "status": "badpage",
+    "err": "",
+    "size": 62461
+  },
+  {
+    "slug": "voam",
+    "url": "https://voam.co/",
+    "status": "fail",
+    "err": "Page.goto: net::ERR_EMPTY_RESPONSE at https://voam.co/\nCall log:\n  - navigating to \"https://voam.co/\", waiting until \"domcontentloaded\"\n",
+    "size": 0
+  },
+  {
+    "slug": "cambridge-cares",
+    "url": "https://www.cares.cam.ac.uk/",
+    "status": "ok",
+    "err": "",
+    "size": 681706
+  },
+  {
+    "slug": "doob-bean-bags",
+    "url": "https://getdoob.com/",
+    "status": "ok",
+    "err": "",
+    "size": 481576
+  },
+  {
+    "slug": "qualitees",
+    "url": "https://www.qualiteesprintingstudio.com/",
+    "status": "ok",
+    "err": "",
+    "size": 294353
+  },
+  {
+    "slug": "el-vistra-hotel",
+    "url": "https://elvistrahotelangelescity.com/",
+    "status": "ok",
+    "err": "",
+    "size": 546207
+  },
+  {
+    "slug": "manila-football-lab",
+    "url": "https://manilafootballlab.netlify.app/",
+    "status": "ok",
+    "err": "",
+    "size": 102966
+  },
+  {
+    "slug": "allied-telesis",
+    "url": "https://www.alliedtelesis.com/",
+    "status": "badpage",
+    "err": "",
+    "size": 4714
+  },
+  {
+    "slug": "bricksable",
+    "url": "https://bricksable.com/",
+    "status": "ok",
+    "err": "",
+    "size": 167809
+  },
+  {
+    "slug": "calboy",
+    "url": "https://smmooth.com/product/calboy-appointment-scheduler/",
+    "status": "fail",
+    "err": "Page.goto: net::ERR_EMPTY_RESPONSE at https://smmooth.com/product/calboy-appointment-scheduler/\nCall log:\n  - navigating to \"https://smmooth.com/product/calboy-",
+    "size": 0
+  },
+  {
+    "slug": "reggie-event",
+    "url": "https://smmooth.com/product/reggie-event/",
+    "status": "fail",
+    "err": "Page.goto: net::ERR_EMPTY_RESPONSE at https://smmooth.com/product/reggie-event/\nCall log:\n  - navigating to \"https://smmooth.com/product/reggie-event/\", waiting",
+    "size": 0
+  },
+  {
+    "slug": "smooth-smtp",
+    "url": "https://smmooth.com/product/smooth-smtp/",
+    "status": "fail",
+    "err": "Page.goto: net::ERR_CONNECTION_CLOSED at https://smmooth.com/product/smooth-smtp/\nCall log:\n  - navigating to \"https://smmooth.com/product/smooth-smtp/\", waitin",
+    "size": 0
+  },
+  {
+    "slug": "antonio-current",
+    "url": "https://antonioalforque.vercel.app/",
+    "status": "ok",
+    "err": "",
+    "size": 371172
+  },
+  {
+    "slug": "chyrek",
+    "url": "https://michalchyrek.com/",
+    "status": "ok",
+    "err": "",
+    "size": 135576
+  },
+  {
+    "slug": "the-digital-banker",
+    "url": "https://thedigitalbanker.com/",
+    "status": "badpage",
+    "err": "",
+    "size": 62665
+  }
+]

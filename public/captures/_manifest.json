@@ -1,0 +1,290 @@
+[
+  {
+    "slug": "mare-wear",
+    "url": "https://marewear.ph/",
+    "status": "ok",
+    "err": "",
+    "exists": true,
+    "size": 1278431
+  },
+  {
+    "slug": "kettle-creek-hvac",
+    "url": "https://demos.tul-id.com/hvac",
+    "status": "ok",
+    "err": "",
+    "exists": true,
+    "size": 801988
+  },
+  {
+    "slug": "go-fitness-gear",
+    "url": "https://gofitnessgear.com/",
+    "status": "ok",
+    "err": "",
+    "exists": true,
+    "size": 231784
+  },
+  {
+    "slug": "smmile",
+    "url": "https://smmile.com/",
+    "status": "ok",
+    "err": "",
+    "exists": true,
+    "size": 200807
+  },
+  {
+    "slug": "the-digital-banker",
+    "url": "https://thedigitalbanker.com/",
+    "status": "ok",
+    "err": "",
+    "exists": true,
+    "size": 62505
+  },
+  {
+    "slug": "pet-care-medic",
+    "url": "https://petcaremedic.org/",
+    "status": "fail",
+    "err": "Page.goto: net::ERR_EMPTY_RESPONSE at https://petcaremedic.org/\nCall log:\n  - navigating to \"https://petcaremedic.org/\", waiting until \"domcontentloaded\"\n",
+    "exists": false,
+    "size": 0
+  },
+  {
+    "slug": "wearnes-starchase",
+    "url": "https://wearnes-starchase.com/",
+    "status": "fail",
+    "err": "Page.goto: Navigation to \"https://wearnes-starchase.com/\" is interrupted by another navigation to \"chrome-error://chromewebdata/\"\nCall log:\n  - navigating to \"https://wearnes-starc",
+    "exists": false,
+    "size": 0
+  },
+  {
+    "slug": "jeans-wild-heart",
+    "url": "https://jeanswildheart.com/",
+    "status": "fail",
+    "err": "Page.goto: Navigation to \"https://jeanswildheart.com/\" is interrupted by another navigation to \"https://wearnes-starchase.com/\"\nCall log:\n  - navigating to \"https://jeanswildheart.",
+    "exists": false,
+    "size": 0
+  },
+  {
+    "slug": "classic-furniture",
+    "url": "https://classicfurniture.sg/",
+    "status": "fail",
+    "err": "Page.goto: net::ERR_CONNECTION_CLOSED at https://classicfurniture.sg/\nCall log:\n  - navigating to \"https://classicfurniture.sg/\", waiting until \"domcontentloaded\"\n",
+    "exists": false,
+    "size": 0
+  },
+  {
+    "slug": "jp-pepperdine",
+    "url": "https://www.jppepperdine.com/",
+    "status": "fail",
+    "err": "Page.goto: Navigation to \"https://www.jppepperdine.com/\" is interrupted by another navigation to \"chrome-error://chromewebdata/\"\nCall log:\n  - navigating to \"https://www.jppepperdi",
+    "exists": false,
+    "size": 0
+  },
+  {
+    "slug": "hue-snackable-moods",
+    "url": "https://findmyhue.com/",
+    "status": "fail",
+    "err": "Page.goto: Navigation to \"https://findmyhue.com/\" is interrupted by another navigation to \"https://www.jppepperdine.com/\"\nCall log:\n  - navigating to \"https://findmyhue.com/\", wait",
+    "exists": false,
+    "size": 0
+  },
+  {
+    "slug": "yellow-ribbon-cares",
+    "url": "https://yrcares.org.sg/",
+    "status": "fail",
+    "err": "Page.goto: net::ERR_EMPTY_RESPONSE at https://yrcares.org.sg/\nCall log:\n  - navigating to \"https://yrcares.org.sg/\", waiting until \"domcontentloaded\"\n",
+    "exists": false,
+    "size": 0
+  },
+  {
+    "slug": "global-private-banker",
+    "url": "https://globalprivatebanker.net/",
+    "status": "fail",
+    "err": "Page.goto: Navigation to \"https://globalprivatebanker.net/\" is interrupted by another navigation to \"chrome-error://chromewebdata/\"\nCall log:\n  - navigating to \"https://globalpriva",
+    "exists": false,
+    "size": 0
+  },
+  {
+    "slug": "colex-holdings",
+    "url": "https://www.colex.com.sg/",
+    "status": "fail",
+    "err": "Page.goto: Navigation to \"https://www.colex.com.sg/\" is interrupted by another navigation to \"https://globalprivatebanker.net/\"\nCall log:\n  - navigating to \"https://www.colex.com.s",
+    "exists": false,
+    "size": 0
+  },
+  {
+    "slug": "greystone-advisory",
+    "url": "https://greystone.com.sg/",
+    "status": "fail",
+    "err": "Page.goto: net::ERR_EMPTY_RESPONSE at https://greystone.com.sg/\nCall log:\n  - navigating to \"https://greystone.com.sg/\", waiting until \"domcontentloaded\"\n",
+    "exists": false,
+    "size": 0
+  },
+  {
+    "slug": "sunny-dental",
+    "url": "https://sunnydms.com/",
+    "status": "fail",
+    "err": "Page.goto: Navigation to \"https://sunnydms.com/\" is interrupted by another navigation to \"chrome-error://chromewebdata/\"\nCall log:\n  - navigating to \"https://sunnydms.com/\", waitin",
+    "exists": false,
+    "size": 0
+  },
+  {
+    "slug": "paracrine",
+    "url": "https://www.paracrinetherapeutics.com/",
+    "status": "fail",
+    "err": "Page.goto: Navigation to \"https://www.paracrinetherapeutics.com/\" is interrupted by another navigation to \"https://sunnydms.com/\"\nCall log:\n  - navigating to \"https://www.paracrine",
+    "exists": false,
+    "size": 0
+  },
+  {
+    "slug": "bhavinis-law",
+    "url": "https://bhavinislawpractice.com/",
+    "status": "fail",
+    "err": "Page.goto: Navigation to \"https://bhavinislawpractice.com/\" is interrupted by another navigation to \"https://paracrinetherapeutics.com/\"\nCall log:\n  - navigating to \"https://bhavin",
+    "exists": false,
+    "size": 0
+  },
+  {
+    "slug": "diot-siaci",
+    "url": "https://asia.diot-siaci.com/",
+    "status": "fail",
+    "err": "Page.goto: Navigation to \"https://asia.diot-siaci.com/\" is interrupted by another navigation to \"https://bhavinislawpractice.com/\"\nCall log:\n  - navigating to \"https://asia.diot-si",
+    "exists": false,
+    "size": 0
+  },
+  {
+    "slug": "marano-furniture",
+    "url": "https://maranofurniture.com/marano-living/",
+    "status": "fail",
+    "err": "Page.goto: Navigation to \"https://maranofurniture.com/marano-living/\" is interrupted by another navigation to \"https://asia.diot-siaci.com/\"\nCall log:\n  - navigating to \"https://ma",
+    "exists": false,
+    "size": 0
+  },
+  {
+    "slug": "decor-arts",
+    "url": "https://decorarts.com.sg/",
+    "status": "fail",
+    "err": "Page.goto: Navigation to \"https://decorarts.com.sg/\" is interrupted by another navigation to \"https://maranofurniture.com/marano-living/\"\nCall log:\n  - navigating to \"https://decor",
+    "exists": false,
+    "size": 0
+  },
+  {
+    "slug": "declarators",
+    "url": "https://declarators.com.sg/",
+    "status": "fail",
+    "err": "Page.goto: Navigation to \"https://declarators.com.sg/\" is interrupted by another navigation to \"https://decorarts.com.sg/\"\nCall log:\n  - navigating to \"https://declarators.com.sg/\"",
+    "exists": false,
+    "size": 0
+  },
+  {
+    "slug": "universal-employment",
+    "url": "https://universalmaidagency.com/",
+    "status": "fail",
+    "err": "Page.goto: Navigation to \"https://universalmaidagency.com/\" is interrupted by another navigation to \"https://declarators.com.sg/\"\nCall log:\n  - navigating to \"https://universalmaid",
+    "exists": false,
+    "size": 0
+  },
+  {
+    "slug": "voam",
+    "url": "https://voam.co/",
+    "status": "fail",
+    "err": "Page.goto: Navigation to \"https://voam.co/\" is interrupted by another navigation to \"https://universalmaidagency.com/\"\nCall log:\n  - navigating to \"https://voam.co/\", waiting until",
+    "exists": false,
+    "size": 0
+  },
+  {
+    "slug": "cambridge-cares",
+    "url": "https://www.cares.cam.ac.uk/",
+    "status": "fail",
+    "err": "Page.goto: Navigation to \"https://www.cares.cam.ac.uk/\" is interrupted by another navigation to \"https://voam.co/\"\nCall log:\n  - navigating to \"https://www.cares.cam.ac.uk/\", waiti",
+    "exists": false,
+    "size": 0
+  },
+  {
+    "slug": "doob-bean-bags",
+    "url": "https://getdoob.com/",
+    "status": "fail",
+    "err": "Page.goto: Navigation to \"https://getdoob.com/\" is interrupted by another navigation to \"https://www.cares.cam.ac.uk/\"\nCall log:\n  - navigating to \"https://getdoob.com/\", waiting u",
+    "exists": false,
+    "size": 0
+  },
+  {
+    "slug": "qualitees",
+    "url": "https://www.qualiteesprintingstudio.com/",
+    "status": "fail",
+    "err": "Page.goto: Navigation to \"https://www.qualiteesprintingstudio.com/\" is interrupted by another navigation to \"https://getdoob.com/\"\nCall log:\n  - navigating to \"https://www.qualitee",
+    "exists": false,
+    "size": 0
+  },
+  {
+    "slug": "el-vistra-hotel",
+    "url": "https://elvistrahotelangelescity.com/",
+    "status": "fail",
+    "err": "Page.goto: Navigation to \"https://elvistrahotelangelescity.com/\" is interrupted by another navigation to \"https://www.qualiteesprintingstudio.com/\"\nCall log:\n  - navigating to \"htt",
+    "exists": false,
+    "size": 0
+  },
+  {
+    "slug": "manila-football-lab",
+    "url": "https://manilafootballlab.netlify.app/",
+    "status": "fail",
+    "err": "Page.goto: Navigation to \"https://manilafootballlab.netlify.app/\" is interrupted by another navigation to \"https://elvistrahotelangelescity.com/\"\nCall log:\n  - navigating to \"https",
+    "exists": false,
+    "size": 0
+  },
+  {
+    "slug": "allied-telesis",
+    "url": "https://www.alliedtelesis.com/",
+    "status": "fail",
+    "err": "Page.goto: Navigation to \"https://www.alliedtelesis.com/\" is interrupted by another navigation to \"https://manilafootballlab.netlify.app/\"\nCall log:\n  - navigating to \"https://www.",
+    "exists": false,
+    "size": 0
+  },
+  {
+    "slug": "bricksable",
+    "url": "https://bricksable.com/",
+    "status": "fail",
+    "err": "Page.goto: Navigation to \"https://bricksable.com/\" is interrupted by another navigation to \"https://www.alliedtelesis.com/\"\nCall log:\n  - navigating to \"https://bricksable.com/\", w",
+    "exists": false,
+    "size": 0
+  },
+  {
+    "slug": "calboy",
+    "url": "https://smmooth.com/product/calboy-appointment-scheduler/",
+    "status": "fail",
+    "err": "Page.goto: net::ERR_CONNECTION_CLOSED at https://smmooth.com/product/calboy-appointment-scheduler/\nCall log:\n  - navigating to \"https://smmooth.com/product/calboy-appointment-sched",
+    "exists": false,
+    "size": 0
+  },
+  {
+    "slug": "reggie-event",
+    "url": "https://smmooth.com/product/reggie-event/",
+    "status": "fail",
+    "err": "Page.goto: net::ERR_CONNECTION_CLOSED at https://smmooth.com/product/reggie-event/\nCall log:\n  - navigating to \"https://smmooth.com/product/reggie-event/\", waiting until \"domconten",
+    "exists": false,
+    "size": 0
+  },
+  {
+    "slug": "smooth-smtp",
+    "url": "https://smmooth.com/product/smooth-smtp/",
+    "status": "fail",
+    "err": "Page.goto: net::ERR_EMPTY_RESPONSE at https://smmooth.com/product/smooth-smtp/\nCall log:\n  - navigating to \"https://smmooth.com/product/smooth-smtp/\", waiting until \"domcontentload",
+    "exists": false,
+    "size": 0
+  },
+  {
+    "slug": "antonio-current",
+    "url": "https://antonioalforque.vercel.app/",
+    "status": "fail",
+    "err": "Page.goto: Navigation to \"https://antonioalforque.vercel.app/\" is interrupted by another navigation to \"chrome-error://chromewebdata/\"\nCall log:\n  - navigating to \"https://antonioa",
+    "exists": false,
+    "size": 0
+  },
+  {
+    "slug": "chyrek",
+    "url": "https://michalchyrek.com/",
+    "status": "fail",
+    "err": "Page.goto: Navigation to \"https://michalchyrek.com/\" is interrupted by another navigation to \"https://antonioalforque.vercel.app/\"\nCall log:\n  - navigating to \"https://michalchyrek",
+    "exists": false,
+    "size": 0
+  }
+]
