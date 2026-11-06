@@ -75,7 +75,6 @@ export default function LiveMarquee({ items }: { items: Project[] }) {
         <button
           type="button"
           className="marquee-toggle"
-          aria-pressed={paused}
           onClick={() => setPaused((p) => !p)}
         >
           {paused ? "Resume motion" : "Pause motion"}

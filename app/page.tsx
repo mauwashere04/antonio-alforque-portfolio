@@ -1,10 +1,12 @@
-/* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
 import Link from "next/link";
 import Carousel from "./_components/Carousel";
 import LiveMarquee from "./_components/LiveMarquee";
 import ProjectIndex from "./_components/ProjectIndex";
 import { carouselProjects, heroFrames, indexProjects, publicProjects } from "./_data/projects";
+
+/** 1×1 transparent GIF: a <source> for the range where a frame is display:none, so it never downloads. */
+const BLANK = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
 
 export const metadata: Metadata = {
   title: "Antonio Alforque — Live sites, not case-study theatre",
@@ -77,7 +79,23 @@ export default function Home() {
                         <span>↗</span>
                       </div>
                       {f.live && <span className="live">Live</span>}
-                      <img src={`/captures/${f.img}.png`} alt={`${f.name} — live homepage`} width={1280} height={800} />
+                      <picture>
+                        {f.hideBelow > 0 && <source media={`(max-width:${f.hideBelow}px)`} srcSet={BLANK} />}
+                        <source
+                          type="image/webp"
+                          srcSet={`/captures/${f.img}-800.webp 800w, /captures/${f.img}-1600.webp 1600w`}
+                          sizes={f.sizes}
+                        />
+                        <img
+                          src={`/captures/${f.img}.png`}
+                          alt={`${f.name} — live homepage`}
+                          width={1280}
+                          height={800}
+                          loading={f.cls === "f1" ? "eager" : "lazy"}
+                          fetchPriority={f.cls === "f1" ? "high" : undefined}
+                          decoding={f.cls === "f1" ? undefined : "async"}
+                        />
+                      </picture>
                     </a>
                     <figcaption className="sr-only">{f.name}</figcaption>
                   </figure>
@@ -102,12 +120,21 @@ export default function Home() {
                 rel="noopener"
                 aria-label="MARE homepage (opens live site)"
               >
-                <img
-                  src="/captures/mare-wear.png"
-                  alt="MARE homepage — editorial lookbook storefront"
-                  width={1280}
-                  height={800}
-                />
+                <picture>
+                  <source
+                    type="image/webp"
+                    srcSet="/captures/mare-wear-800.webp 800w, /captures/mare-wear-1280.webp 1280w"
+                    sizes="(max-width:1024px) 92vw, 720px"
+                  />
+                  <img
+                    src="/captures/mare-wear.png"
+                    alt="MARE homepage — editorial lookbook storefront"
+                    width={1280}
+                    height={800}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
               </a>
               <div>
                 <h2 id="feat-h">
@@ -141,13 +168,6 @@ export default function Home() {
 
         <section className="index" id="index" aria-labelledby="idx-h">
           <div className="wrap">
-            <div className="sec-head">
-              <div>
-                <p className="label">Index</p>
-                <h2 id="idx-h">All 37 projects</h2>
-              </div>
-              <p>MARE is 01, above. 02–37 here — live URLs on every public build.</p>
-            </div>
             <ProjectIndex items={indexProjects} />
           </div>
         </section>
