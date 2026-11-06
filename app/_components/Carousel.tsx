@@ -69,7 +69,7 @@ export default function Carousel({ items }: { items: Project[] }) {
             <article className="car-card" key={p.slug}>
               <a href={p.href} target="_blank" rel="noopener" aria-label={`${p.name} (opens live site)`}>
                 <div className="shot">
-                  <img src={thumb(p.slug)} alt="" loading="lazy" width={640} height={400} />
+                  <img src={thumb(p.slug)} alt="" loading="lazy" decoding="async" width={640} height={400} />
                 </div>
               </a>
               <div className="row">

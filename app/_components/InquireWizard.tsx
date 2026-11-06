@@ -86,7 +86,7 @@ function normalizePhone(raw: string): string {
     return `+${cc}${digits.slice(cc.length).replace(/^0/, "")}`;
   }
   if (digits.startsWith("0")) return `+63${digits.slice(1)}`;
-  if (digits.startsWith("63")) return `+${digits}`;
+  if (digits.startsWith("63")) return `+63${digits.slice(2).replace(/^0/, "")}`;
   return `+63${digits}`;
 }
 
@@ -301,6 +301,7 @@ export default function InquireWizard() {
             Phone
             <input
               type="tel"
+              inputMode="tel"
               value={answers.phone}
               onChange={(e) => set("phone", e.target.value)}
               placeholder="+63 917 123 4567"

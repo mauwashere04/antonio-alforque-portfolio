@@ -2,8 +2,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Carousel from "./_components/Carousel";
+import LiveMarquee from "./_components/LiveMarquee";
 import ProjectIndex from "./_components/ProjectIndex";
-import { alsoLive, carouselProjects, heroFrames, indexProjects, urlLabel } from "./_data/projects";
+import { carouselProjects, heroFrames, indexProjects, publicProjects } from "./_data/projects";
 
 export const metadata: Metadata = {
   title: "Antonio Alforque — Live sites, not case-study theatre",
@@ -62,29 +63,28 @@ export default function Home() {
                   <span>Five questions, then a 30-minute call.</span>
                 </li>
               </ul>
-              <div className="collage" aria-label="Five live client sites">
+              <div className="collage" aria-label="Selected live client sites">
                 {heroFrames.map((f) => (
                   <figure className={`frame ${f.cls}`} key={f.cls}>
-                    <div className="chrome">
-                      <span>{f.chrome}</span>
-                      <span>↗</span>
-                    </div>
-                    {f.live && <span className="live">Live</span>}
-                    <img src={`/captures/${f.img}.png`} alt={`${f.name} — live homepage`} width={1280} height={800} />
+                    <a
+                      href={f.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${f.name} (opens live site in a new tab)`}
+                    >
+                      <div className="chrome">
+                        <span>{f.chrome}</span>
+                        <span>↗</span>
+                      </div>
+                      {f.live && <span className="live">Live</span>}
+                      <img src={`/captures/${f.img}.png`} alt={`${f.name} — live homepage`} width={1280} height={800} />
+                    </a>
                     <figcaption className="sr-only">{f.name}</figcaption>
                   </figure>
                 ))}
               </div>
             </div>
-            <div className="hero-domains">
-              <b>Also live:</b>
-              {alsoLive.map((href) => (
-                <a href={href} target="_blank" rel="noopener" key={href}>
-                  {urlLabel(href)}
-                </a>
-              ))}
-              <a href="#index">+ 24 more ↓</a>
-            </div>
+            <LiveMarquee items={publicProjects} />
           </div>
         </section>
 

@@ -35,7 +35,14 @@ export default function ProjectIndex({ items }: { items: Project[] }) {
             <article className={cls} data-slug={p.slug} key={p.slug} style={on ? undefined : { display: "none" }}>
               <div className={shotCls}>
                 {p.shot === "img" && (
-                  <img src={thumb(p.slug)} alt={`${p.name} homepage`} width={640} height={400} />
+                  <img
+                    src={thumb(p.slug)}
+                    alt={`${p.name} homepage`}
+                    width={640}
+                    height={400}
+                    loading="lazy"
+                    decoding="async"
+                  />
                 )}
                 {p.shot === "pending" && (
                   <>

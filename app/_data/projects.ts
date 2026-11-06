@@ -44,9 +44,9 @@ export const indexProjects: Project[] = [
   { slug: "manila-football-lab", name: "Manila Football Lab", href: "https://manilafootballlab.netlify.app/", shot: "img" },
   { slug: "marano-furniture", name: "Marano Furniture", href: "https://maranofurniture.com/marano-living/", shot: "img" },
   { slug: "classic-furniture", name: "Classic Furniture", href: "https://classicfurniture.sg/", shot: "pending" },
-  { slug: "decor-arts", name: "Decor Arts", href: "https://decorarts.com.sg/", shot: "pending" },
-  { slug: "voam", name: "Voam", href: "https://voam.co/", shot: "pending" },
-  { slug: "allied-telesis", name: "Allied Telesis", href: "https://www.alliedtelesis.com/", shot: "pending" },
+  { slug: "decor-arts", name: "Decor Arts", href: "https://decorarts.com.sg/", shot: "img" },
+  { slug: "voam", name: "Voam", href: "https://voam.co/", shot: "img" },
+  { slug: "allied-telesis", name: "Allied Telesis", href: "https://www.alliedtelesis.com/", shot: "img" },
   { slug: "the-digital-banker", name: "The Digital Banker", href: "https://thedigitalbanker.com/", shot: "img" },
   { slug: "global-private-banker", name: "Global Private Banker", href: "https://globalprivatebanker.net/", shot: "img" },
   { slug: "idp", name: "IDP System", shot: "private" },
@@ -80,22 +80,17 @@ export const carouselProjects: Project[] = carouselSlugs.map((slug) => {
   return p;
 });
 
-/** Hero collage: five live frames. f4 (JP Pepperdine) is hidden on mobile via CSS. */
+/** Hero collage: five live frames. On mobile only f1 and f2 show (f3–f5 are hidden via CSS). */
 export const heroFrames = [
-  { cls: "f1", chrome: "demos.tul-id.com/hvac", img: "kettle-creek-hvac", name: "Kettle Creek HVAC", live: true },
-  { cls: "f2", chrome: "smmile.com", img: "smmile", name: "Smmile", live: false },
-  { cls: "f3", chrome: "gofitnessgear.com", img: "go-fitness-gear", name: "Go Fitness Gear", live: false },
-  { cls: "f4", chrome: "jppepperdine.com", img: "jp-pepperdine", name: "JP Pepperdine", live: false },
-  { cls: "f5", chrome: "elvistrahotelangelescity.com", img: "el-vistra-hotel", name: "El Vistra Hotel", live: false },
+  { cls: "f1", chrome: "demos.tul-id.com/hvac", img: "kettle-creek-hvac", name: "Kettle Creek HVAC", href: "https://demos.tul-id.com/hvac", live: true },
+  { cls: "f2", chrome: "smmile.com", img: "smmile", name: "Smmile", href: "https://smmile.com/", live: false },
+  { cls: "f3", chrome: "gofitnessgear.com", img: "go-fitness-gear", name: "Go Fitness Gear", href: "https://gofitnessgear.com/", live: false },
+  { cls: "f4", chrome: "jppepperdine.com", img: "jp-pepperdine", name: "JP Pepperdine", href: "https://www.jppepperdine.com/", live: false },
+  { cls: "f5", chrome: "elvistrahotelangelescity.com", img: "el-vistra-hotel", name: "El Vistra Hotel", href: "https://elvistrahotelangelescity.com/", live: false },
 ];
 
-/** "Also live:" row under the hero. */
-export const alsoLive = [
-  "https://www.colex.com.sg/",
-  "https://www.paracrinetherapeutics.com/",
-  "https://wearnes-starchase.com/",
-  "https://greystone.com.sg/",
-  "https://www.cares.cam.ac.uk/",
-  "https://getdoob.com/",
-  "https://findmyhue.com/",
-];
+/** Every public project (MARE + index entries that have a live URL), for the "Also live" marquee. */
+export const publicProjects: Project[] = [
+  { slug: "mare-wear", name: "MARE", href: "https://marewear.ph/", shot: "img" } as Project,
+  ...indexProjects,
+].filter((p) => p.href);
