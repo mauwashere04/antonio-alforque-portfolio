@@ -312,7 +312,7 @@ export default function InquireWizard() {
             />
           </label>
           <label className="full">
-            Company <em>(optional)</em>
+            <span>Company <em>(optional)</em></span>
             <input
               value={answers.company}
               onChange={(e) => set("company", e.target.value)}
@@ -321,7 +321,7 @@ export default function InquireWizard() {
             />
           </label>
           <label className="full">
-            Note <em>(optional)</em>
+            <span>Note <em>(optional)</em></span>
             <textarea
               rows={3}
               value={answers.note}

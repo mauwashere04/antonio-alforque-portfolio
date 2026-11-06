@@ -12,6 +12,11 @@ export const metadata: Metadata = {
   title: "Antonio Alforque — Live sites, not case-study theatre",
   description:
     "Web developer in Manila. 51 projects — WordPress, Shopify, custom systems and GoHighLevel — shown as live URLs.",
+  openGraph: {
+    title: "Antonio Alforque — Live sites, not case-study theatre",
+    description:
+      "Web developer in Manila. 51 projects — WordPress, Shopify, custom systems and GoHighLevel — shown as live URLs.",
+  },
 };
 
 export default function Home() {
@@ -227,11 +232,11 @@ export default function Home() {
             </div>
             <div className="stats">
               <div className="stat">
-                <b className="num">51</b>
+                <b className="num">{indexProjects.length}</b>
                 <span>Projects in the index above</span>
               </div>
               <div className="stat">
-                <b className="num">34</b>
+                <b className="num">{indexProjects.filter((p) => p.href).length}</b>
                 <span>With a public URL you can click</span>
               </div>
               <div className="stat">
@@ -245,7 +250,7 @@ export default function Home() {
                 </span>
               </div>
               <div className="stat">
-                <b className="num">3</b>
+                <b className="num">{indexProjects.filter((p) => !p.href).length}</b>
                 <span>Private builds, listed without links</span>
               </div>
             </div>
