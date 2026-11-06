@@ -59,7 +59,7 @@ export default function Home() {
                 </li>
                 <li>
                   <b>Need a site?</b>
-                  <span>Five questions, then a 20-minute call.</span>
+                  <span>Five questions, then a 30-minute call.</span>
                 </li>
               </ul>
               <div className="collage" aria-label="Five live client sites">

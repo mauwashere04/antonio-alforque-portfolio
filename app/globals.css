@@ -94,7 +94,7 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 .visit:hover{color:var(--accent-ink)}
 
 /* Section heads */
-.sec-head{display:flex;align-items:end;justify-content:space-between;gap:20px;border-bottom:1px solid var(--ink);padding-bottom:14px;margin-bottom:24px}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;border-bottom:1px solid var(--ink);padding-bottom:14px;margin-bottom:24px}
 .sec-head h2{font-family:var(--display);font-weight:400;font-size:clamp(2rem,3.6vw,3.2rem);letter-spacing:-.03em;line-height:1;margin:6px 0 0}
 .sec-head p{margin:8px 0 0;color:var(--muted);font-size:.95rem}
 
@@ -175,7 +175,7 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 
 /* Inquire band */
 .inq-band{background:var(--accent);color:#fff;padding:72px 0}
-.inq-band .inner{display:flex;align-items:end;justify-content:space-between;gap:28px;flex-wrap:wrap}
+.inq-band .inner{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;flex-wrap:wrap}
 .inq-band h2{font-family:var(--display);font-weight:400;font-size:clamp(2.4rem,5vw,4.6rem);letter-spacing:-.035em;line-height:.95;margin:0 0 12px;max-width:14ch}
 .inq-band p{margin:0;color:#D5EDE4;max-width:44ch}
 .inq-band .btn{background:#fff;color:var(--ink);border-color:#fff}
@@ -224,7 +224,7 @@ button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
   .stat b{font-size:2.4rem}
   .pager{justify-content:center}
 }
-@media (max-width:720px){.sec-head{flex-wrap:wrap;align-items:end}.car-count{display:none}.sec-head>p{flex-basis:100%;margin-top:0}}
+@media (max-width:720px){.sec-head{flex-wrap:wrap;align-items:flex-end}.car-count{display:none}.sec-head>p{flex-basis:100%;margin-top:0}}
 
 /* ========== Inquire flow ========== */
 .inq-shell{min-height:100vh;display:flex;flex-direction:column;background:var(--paper)}
