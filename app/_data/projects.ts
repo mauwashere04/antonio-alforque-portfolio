@@ -44,7 +44,7 @@ export function urlLabel(href: string): string {
 export const thumb = (slug: string) => `/captures/thumbs/${slug}.png`;
 export const thumbWebp = (slug: string) => `/captures/thumbs/${slug}.webp`;
 
-/** All 45 projects, 01-45. Order is the display order: best-looking hero first, then private builds, then plugins. */
+/** All 51 projects, 01-51. Order is the display order: best-looking hero first, then private builds, then plugins. */
 export const indexProjects: Project[] = [
   { slug: "mare-wear", name: "MARE", href: "https://marewear.ph/", shot: "img", platform: "shopify", sector: "retail" },
   { slug: "marano-furniture", name: "Marano Furniture", href: "https://maranofurniture.com/marano-living/", shot: "img", platform: "wordpress", sector: "retail" },
@@ -86,6 +86,12 @@ export const indexProjects: Project[] = [
   { slug: "idp", name: "IDP System", shot: "img", platform: "custom", sector: "software" },
   { slug: "sme-chatbot", name: "SME Chatbot", shot: "img", platform: "custom", sector: "software" },
   { slug: "tagroup", name: "TAGroup", shot: "img", platform: "wordpress", sector: "industry" },
+  { slug: "document-management", name: "Document Management System", shot: "img", platform: "custom", sector: "software" },
+  { slug: "car-workshop", name: "Car Workshop System", shot: "img", platform: "custom", sector: "industry" },
+  { slug: "webman", name: "Webman System", shot: "img", platform: "custom", sector: "software" },
+  { slug: "xero-project-tracker", name: "Xero Project Tracker", shot: "img", platform: "custom", sector: "finance" },
+  { slug: "fitivate-events", name: "Fitivate Events Manager", shot: "img", platform: "custom", sector: "health" },
+  { slug: "material-tracking", name: "Material Tracking System", shot: "img", platform: "custom", sector: "industry" },
   { slug: "cgl-demo", name: "CGL Demo Homepage", href: "https://cgl-demo.netlify.app/", shot: "img", platform: "custom", sector: "industry" },
   { slug: "bricksable", name: "Bricksable", href: "https://bricksable.com/", shot: "img", platform: "plugin", sector: "software" },
   { slug: "calboy", name: "Calboy Appointment Scheduler", href: "https://smmooth.com/product/calboy-appointment-scheduler/", shot: "img", platform: "plugin", sector: "software" },
