@@ -44,7 +44,7 @@ export function urlLabel(href: string): string {
 export const thumb = (slug: string) => `/captures/thumbs/${slug}.png`;
 export const thumbWebp = (slug: string) => `/captures/thumbs/${slug}.webp`;
 
-/** All 37 projects, 01–37. Order is the display order: best-looking hero first, then private builds, then plugins. */
+/** All 45 projects, 01-45. Order is the display order: best-looking hero first, then private builds, then plugins. */
 export const indexProjects: Project[] = [
   { slug: "mare-wear", name: "MARE", href: "https://marewear.ph/", shot: "img", platform: "shopify", sector: "retail" },
   { slug: "marano-furniture", name: "Marano Furniture", href: "https://maranofurniture.com/marano-living/", shot: "img", platform: "wordpress", sector: "retail" },
@@ -59,6 +59,10 @@ export const indexProjects: Project[] = [
   { slug: "declarators", name: "Declarators", href: "https://declarators.com.sg/", shot: "img", platform: "wordpress", sector: "finance" },
   { slug: "colex-holdings", name: "Colex Holdings", href: "https://www.colex.com.sg/", shot: "img", platform: "wordpress", sector: "industry" },
   { slug: "kettle-creek-hvac", name: "Kettle Creek HVAC", href: "https://demos.tul-id.com/hvac", shot: "img", platform: "ghl", sector: "industry" },
+  { slug: "kestrel-ridge-roofing", name: "Kestrel Ridge Roofing", href: "https://demos.tul-id.com/roofing", shot: "img", platform: "ghl", sector: "industry" },
+  { slug: "halloway-lane-aesthetics", name: "Halloway Lane Aesthetics", href: "https://demos.tul-id.com/medspa", shot: "img", platform: "ghl", sector: "health" },
+  { slug: "hollis-row-dental", name: "Hollis Row Dental", href: "https://demos.tul-id.com/dental", shot: "img", platform: "ghl", sector: "health" },
+  { slug: "tulid-ghl-landing", name: "TUL-ID Digital", href: "https://go.tul-id.com/", shot: "img", platform: "ghl", sector: "finance" },
   { slug: "voam", name: "Voam", href: "https://voam.co/", shot: "img", platform: "wordpress", sector: "industry" },
   { slug: "el-vistra-hotel", name: "El Vistra Hotel", href: "https://elvistrahotelangelescity.com/", shot: "img", platform: "wordpress", sector: "hospitality" },
   { slug: "diot-siaci", name: "Diot Siaci", href: "https://asia.diot-siaci.com/", shot: "img", platform: "wordpress", sector: "finance" },
@@ -69,6 +73,7 @@ export const indexProjects: Project[] = [
   { slug: "smmile", name: "Smmile", href: "https://smmile.com/", shot: "img", platform: "custom", sector: "finance" },
   { slug: "yellow-ribbon-cares", name: "Yellow Ribbon Cares", href: "https://yrcares.org.sg/", shot: "img", platform: "wordpress", sector: "health" },
   { slug: "sunny-dental", name: "Sunny Dental Medical Supply", href: "https://sunnydms.com/", shot: "img", platform: "wordpress", sector: "health" },
+  { slug: "vesiderm", name: "Vesiderm", href: "https://vesiderm.com/", shot: "img", platform: "wordpress", sector: "health" },
   { slug: "manila-football-lab", name: "Manila Football Lab", href: "https://manilafootballlab.netlify.app/", shot: "img", platform: "custom", sector: "hospitality" },
   { slug: "jeans-wild-heart", name: "Jean's Wild Heart", href: "https://jeanswildheart.com/", shot: "img", platform: "wordpress", sector: "retail" },
   { slug: "decor-arts", name: "Decor Arts", href: "https://decorarts.com.sg/", shot: "img", platform: "wordpress", sector: "retail" },
@@ -76,8 +81,11 @@ export const indexProjects: Project[] = [
   { slug: "allied-telesis", name: "Allied Telesis", href: "https://www.alliedtelesis.com/", shot: "img", platform: "wordpress", sector: "industry" },
   { slug: "the-digital-banker", name: "The Digital Banker", href: "https://thedigitalbanker.com/", shot: "img", platform: "wordpress", sector: "finance" },
   { slug: "global-private-banker", name: "Global Private Banker", href: "https://globalprivatebanker.net/", shot: "img", platform: "wordpress", sector: "finance" },
+  { slug: "sagecollab", name: "SageCollab", href: "https://sagecollab.bevootech.com/", shot: "img", platform: "custom", sector: "software" },
+  { slug: "bevootech", name: "Bevootech", href: "https://bevootech.com/", shot: "img", platform: "custom", sector: "industry" },
   { slug: "idp", name: "IDP System", shot: "img", platform: "custom", sector: "software" },
   { slug: "sme-chatbot", name: "SME Chatbot", shot: "img", platform: "custom", sector: "software" },
+  { slug: "tagroup", name: "TAGroup", shot: "img", platform: "wordpress", sector: "industry" },
   { slug: "cgl-demo", name: "CGL Demo Homepage", href: "https://cgl-demo.netlify.app/", shot: "img", platform: "custom", sector: "industry" },
   { slug: "bricksable", name: "Bricksable", href: "https://bricksable.com/", shot: "img", platform: "plugin", sector: "software" },
   { slug: "calboy", name: "Calboy Appointment Scheduler", href: "https://smmooth.com/product/calboy-appointment-scheduler/", shot: "img", platform: "plugin", sector: "software" },

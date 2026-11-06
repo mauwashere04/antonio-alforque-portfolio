@@ -11,7 +11,7 @@ const BLANK = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAA
 export const metadata: Metadata = {
   title: "Antonio Alforque — Live sites, not case-study theatre",
   description:
-    "Web developer in Manila. 37 projects — WordPress, Shopify, custom systems and GoHighLevel — shown as live URLs.",
+    "Web developer in Manila. 45 projects — WordPress, Shopify, custom systems and GoHighLevel — shown as live URLs.",
 };
 
 export default function Home() {
@@ -52,7 +52,7 @@ export default function Home() {
                   Start a project
                 </Link>
                 <a className="btn btn-ghost" href="#work">
-                  See 37 projects
+                  See 45 projects
                 </a>
               </div>
               <ul className="audience">
@@ -110,7 +110,7 @@ export default function Home() {
           <div className="wrap">
             <div className="featured-head">
               <p className="label">Featured build</p>
-              <p className="label num">01 / 37</p>
+              <p className="label num">01 / 45</p>
             </div>
             <div className="featured-grid">
               <a
@@ -227,7 +227,7 @@ export default function Home() {
             </div>
             <div className="stats">
               <div className="stat">
-                <b className="num">37</b>
+                <b className="num">45</b>
                 <span>Projects in the index above</span>
               </div>
               <div className="stat">
