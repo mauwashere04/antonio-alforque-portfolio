@@ -1,9 +1,12 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useCallback, useEffect, useRef, useState, type FormEvent } from "react";
 
 /** Real GoHighLevel Strategy Call widget. No answers or contact details are ever added to this URL. */
 const BOOKING_URL = "https://api.leadconnectorhq.com/widget/bookings/tul-id-strategy-call";
+
+/** Only target for postMessage prefill. Never "*". */
+const ORIGIN = "https://api.leadconnectorhq.com";
 
 type Choice = readonly [value: string, label: string, sub: string];
 type ChoiceKey = "who" | "need" | "budget";
@@ -14,6 +17,7 @@ type Answers = {
   budget: string;
   name: string;
   email: string;
+  phone: string;
   company: string;
   note: string;
 };
@@ -62,6 +66,29 @@ const CHOICES: Record<ChoiceKey, Choice[]> = {
 };
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const E164_RE = /^\+[1-9]\d{7,14}$/;
+
+/** Phone starts with the Philippines country code; the visitor types the rest. */
+const DEFAULT_PHONE = "+63 ";
+
+/**
+ * Normalize to E.164. A trunk "0" right after the country code is dropped
+ * ("+63 0917..." -> "+63917..."). Input without a "+" is read as a Philippine number.
+ */
+function normalizePhone(raw: string): string {
+  const input = raw.trim().replace(/^00/, "+");
+  const digits = input.replace(/\D/g, "");
+  if (!digits) return "";
+
+  if (input.startsWith("+")) {
+    // 63 is unambiguous; for other codes, use the digit group the visitor separated ("+44 0207...").
+    const cc = digits.startsWith("63") ? "63" : (input.match(/^\+\s*(\d{1,3})(?=[\s().-])/)?.[1] ?? "");
+    return `+${cc}${digits.slice(cc.length).replace(/^0/, "")}`;
+  }
+  if (digits.startsWith("0")) return `+63${digits.slice(1)}`;
+  if (digits.startsWith("63")) return `+63${digits.slice(2).replace(/^0/, "")}`;
+  return `+63${digits}`;
+}
 
 export default function InquireWizard() {
   const [step, setStep] = useState(1);
@@ -71,10 +98,91 @@ export default function InquireWizard() {
     budget: "",
     name: "",
     email: "",
+    phone: DEFAULT_PHONE,
     company: "",
     note: "",
   });
   const [error, setError] = useState("");
+
+  // Step-5 prefill via the widget's postMessage handshake. Values never go in the iframe URL.
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const answersRef = useRef(answers);
+  const timers = useRef(new Set<number>());
+  const initialSent = useRef(false);
+
+  useEffect(() => {
+    answersRef.current = answers;
+  }, [answers]);
+
+  const sendPrefill = useCallback(() => {
+    const iframe = iframeRef.current;
+    if (!iframe) return;
+    const { name, email, phone } = answersRef.current;
+    const [first, ...rest] = (name || "").trim().split(/\s+/).filter(Boolean);
+    iframe.contentWindow?.postMessage(
+      [
+        "query-params",
+        {
+          full_name: name,
+          first_name: first || "",
+          last_name: rest.join(" "),
+          email,
+          phone,
+        },
+        `${location.origin}${location.pathname}`,
+        "",
+      ],
+      ORIGIN,
+    );
+  }, []);
+
+  const prefillSoon = useCallback(() => {
+    const id = window.setTimeout(() => {
+      timers.current.delete(id);
+      sendPrefill();
+    }, 300);
+    timers.current.add(id);
+  }, [sendPrefill]);
+
+  useEffect(() => {
+    const pending = timers.current;
+    return () => {
+      pending.forEach((id) => window.clearTimeout(id));
+      pending.clear();
+    };
+  }, []);
+
+  // Reply to every handshake request from the widget.
+  useEffect(() => {
+    const onMessage = (e: MessageEvent) => {
+      if (e.origin !== ORIGIN) return;
+      if (e.source !== iframeRef.current?.contentWindow) return;
+      if (!Array.isArray(e.data) || e.data[0] !== "fetch-query-params") return;
+      prefillSoon();
+    };
+    window.addEventListener("message", onMessage);
+    return () => window.removeEventListener("message", onMessage);
+  }, [prefillSoon]);
+
+  // Proactive prefill: once per visit to step 5.
+  useEffect(() => {
+    if (step !== 5) {
+      initialSent.current = false;
+      return;
+    }
+    if (initialSent.current) return;
+    initialSent.current = true;
+    prefillSoon();
+  }, [step, prefillSoon]);
+
+  // Move keyboard focus to the new step's heading (not on first render).
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const prevStep = useRef(step);
+  useEffect(() => {
+    if (prevStep.current === step) return;
+    prevStep.current = step;
+    headingRef.current?.focus();
+  }, [step]);
 
   const set = (key: keyof Answers, value: string) => {
     setAnswers((a) => ({ ...a, [key]: value }));
@@ -89,14 +197,23 @@ export default function InquireWizard() {
 
   const nameBad = !answers.name.trim();
   const emailBad = !EMAIL_RE.test(answers.email.trim());
+  const phoneNormalized = normalizePhone(answers.phone);
+  const phoneBad = !E164_RE.test(phoneNormalized);
 
   const onContact = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (nameBad || emailBad) {
-      setError("Name and a valid email, please.");
+    if (nameBad || emailBad || phoneBad) {
+      setError("Name, a valid email and a valid phone number, please.");
       return;
     }
-    setAnswers((a) => ({ ...a, name: a.name.trim(), email: a.email.trim(), company: a.company.trim(), note: a.note.trim() }));
+    setAnswers((a) => ({
+      ...a,
+      name: a.name.trim(),
+      email: a.email.trim(),
+      phone: phoneNormalized,
+      company: a.company.trim(),
+      note: a.note.trim(),
+    }));
     next();
   };
 
@@ -135,7 +252,9 @@ export default function InquireWizard() {
               aria-pressed={on}
               onClick={() => set(key, value)}
             >
-              <span className="k">{String.fromCharCode(65 + k)}</span>
+              <span className="k" aria-hidden="true">
+                {String.fromCharCode(65 + k)}
+              </span>
               <strong>{label}</strong>
               <small>{sub}</small>
             </button>
@@ -179,7 +298,21 @@ export default function InquireWizard() {
             />
           </label>
           <label className="full">
-            Company <em>(optional)</em>
+            Phone
+            <input
+              type="tel"
+              inputMode="tel"
+              value={answers.phone}
+              onChange={(e) => set("phone", e.target.value)}
+              placeholder="+63 917 123 4567"
+              autoComplete="tel"
+              required
+              aria-invalid={error ? phoneBad : undefined}
+              aria-describedby={error ? "contact-error" : undefined}
+            />
+          </label>
+          <label className="full">
+            <span>Company <em>(optional)</em></span>
             <input
               value={answers.company}
               onChange={(e) => set("company", e.target.value)}
@@ -188,7 +321,7 @@ export default function InquireWizard() {
             />
           </label>
           <label className="full">
-            Note <em>(optional)</em>
+            <span>Note <em>(optional)</em></span>
             <textarea
               rows={3}
               value={answers.note}
@@ -208,8 +341,8 @@ export default function InquireWizard() {
   } else {
     body = (
       <>
-        <iframe className="book-frame" src={BOOKING_URL} title="Strategy Call" />
-        <p className="note">20-minute Strategy Call · Asia/Manila. Booking runs in GoHighLevel.</p>
+        <iframe ref={iframeRef} className="book-frame" src={BOOKING_URL} title="Strategy Call" />
+        <p className="note">30-minute Strategy Call · Asia/Manila. Booking runs in GoHighLevel.</p>
         {nav(false)}
       </>
     );
@@ -239,7 +372,9 @@ export default function InquireWizard() {
         <div className="bar">
           <i style={{ width: `${step * 20}%` }} />
         </div>
-        <h1>{TITLES[step - 1]}</h1>
+        <h1 ref={headingRef} tabIndex={-1}>
+          {TITLES[step - 1]}
+        </h1>
         <p className="sub">{SUBS[step - 1]}</p>
         {body}
       </section>

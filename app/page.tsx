@@ -1,14 +1,22 @@
-/* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
 import Link from "next/link";
 import Carousel from "./_components/Carousel";
+import LiveMarquee from "./_components/LiveMarquee";
 import ProjectIndex from "./_components/ProjectIndex";
-import { alsoLive, carouselProjects, heroFrames, indexProjects, urlLabel } from "./_data/projects";
+import { carouselProjects, heroFrames, indexProjects, publicProjects } from "./_data/projects";
+
+/** 1×1 transparent GIF: a <source> for the range where a frame is display:none, so it never downloads. */
+const BLANK = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
 
 export const metadata: Metadata = {
   title: "Antonio Alforque — Live sites, not case-study theatre",
   description:
-    "Web developer in Manila. 37 projects — WordPress, Shopify, custom systems and GoHighLevel — shown as live URLs.",
+    "Web developer in Manila. 51 projects — WordPress, Shopify, custom systems and GoHighLevel — shown as live URLs.",
+  openGraph: {
+    title: "Antonio Alforque — Live sites, not case-study theatre",
+    description:
+      "Web developer in Manila. 51 projects — WordPress, Shopify, custom systems and GoHighLevel — shown as live URLs.",
+  },
 };
 
 export default function Home() {
@@ -49,7 +57,7 @@ export default function Home() {
                   Start a project
                 </Link>
                 <a className="btn btn-ghost" href="#work">
-                  See 37 projects
+                  See 51 projects
                 </a>
               </div>
               <ul className="audience">
@@ -59,32 +67,47 @@ export default function Home() {
                 </li>
                 <li>
                   <b>Need a site?</b>
-                  <span>Five questions, then a 20-minute call.</span>
+                  <span>Five questions, then a 30-minute call.</span>
                 </li>
               </ul>
-              <div className="collage" aria-label="Five live client sites">
+              <div className="collage" aria-label="Selected live client sites">
                 {heroFrames.map((f) => (
                   <figure className={`frame ${f.cls}`} key={f.cls}>
-                    <div className="chrome">
-                      <span>{f.chrome}</span>
-                      <span>↗</span>
-                    </div>
-                    {f.live && <span className="live">Live</span>}
-                    <img src={`/captures/${f.img}.png`} alt={`${f.name} — live homepage`} width={1280} height={800} />
+                    <a
+                      href={f.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${f.name} (opens live site in a new tab)`}
+                    >
+                      <div className="chrome">
+                        <span>{f.chrome}</span>
+                        <span>↗</span>
+                      </div>
+                      {f.live && <span className="live">Live</span>}
+                      <picture>
+                        {f.hideBelow > 0 && <source media={`(max-width:${f.hideBelow}px)`} srcSet={BLANK} />}
+                        <source
+                          type="image/webp"
+                          srcSet={`/captures/${f.img}-800.webp 800w, /captures/${f.img}-1600.webp 1600w`}
+                          sizes={f.sizes}
+                        />
+                        <img
+                          src={`/captures/${f.img}.png`}
+                          alt={`${f.name} — live homepage`}
+                          width={1280}
+                          height={800}
+                          loading={f.cls === "f1" ? "eager" : "lazy"}
+                          fetchPriority={f.cls === "f1" ? "high" : undefined}
+                          decoding={f.cls === "f1" ? undefined : "async"}
+                        />
+                      </picture>
+                    </a>
                     <figcaption className="sr-only">{f.name}</figcaption>
                   </figure>
                 ))}
               </div>
             </div>
-            <div className="hero-domains">
-              <b>Also live:</b>
-              {alsoLive.map((href) => (
-                <a href={href} target="_blank" rel="noopener" key={href}>
-                  {urlLabel(href)}
-                </a>
-              ))}
-              <a href="#index">+ 24 more ↓</a>
-            </div>
+            <LiveMarquee items={publicProjects} />
           </div>
         </section>
 
@@ -92,7 +115,7 @@ export default function Home() {
           <div className="wrap">
             <div className="featured-head">
               <p className="label">Featured build</p>
-              <p className="label num">01 / 37</p>
+              <p className="label num">01 / 51</p>
             </div>
             <div className="featured-grid">
               <a
@@ -102,12 +125,21 @@ export default function Home() {
                 rel="noopener"
                 aria-label="MARE homepage (opens live site)"
               >
-                <img
-                  src="/captures/mare-wear.png"
-                  alt="MARE homepage — editorial lookbook storefront"
-                  width={1280}
-                  height={800}
-                />
+                <picture>
+                  <source
+                    type="image/webp"
+                    srcSet="/captures/mare-wear-800.webp 800w, /captures/mare-wear-1280.webp 1280w"
+                    sizes="(max-width:1024px) 92vw, 720px"
+                  />
+                  <img
+                    src="/captures/mare-wear.png"
+                    alt="MARE homepage — editorial lookbook storefront"
+                    width={1280}
+                    height={800}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
               </a>
               <div>
                 <h2 id="feat-h">
@@ -141,13 +173,6 @@ export default function Home() {
 
         <section className="index" id="index" aria-labelledby="idx-h">
           <div className="wrap">
-            <div className="sec-head">
-              <div>
-                <p className="label">Index</p>
-                <h2 id="idx-h">All 37 projects</h2>
-              </div>
-              <p>MARE is 01, above. 02–37 here — live URLs on every public build.</p>
-            </div>
             <ProjectIndex items={indexProjects} />
           </div>
         </section>
@@ -207,11 +232,11 @@ export default function Home() {
             </div>
             <div className="stats">
               <div className="stat">
-                <b className="num">37</b>
+                <b className="num">{indexProjects.length}</b>
                 <span>Projects in the index above</span>
               </div>
               <div className="stat">
-                <b className="num">34</b>
+                <b className="num">{indexProjects.filter((p) => p.href).length}</b>
                 <span>With a public URL you can click</span>
               </div>
               <div className="stat">
@@ -225,7 +250,7 @@ export default function Home() {
                 </span>
               </div>
               <div className="stat">
-                <b className="num">3</b>
+                <b className="num">{indexProjects.filter((p) => !p.href).length}</b>
                 <span>Private builds, listed without links</span>
               </div>
             </div>

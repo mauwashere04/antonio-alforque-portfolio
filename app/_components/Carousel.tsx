@@ -1,8 +1,7 @@
 "use client";
-/* eslint-disable @next/next/no-img-element */
 
 import { useEffect, useRef, useState } from "react";
-import { thumb, urlLabel, type Project } from "../_data/projects";
+import { thumb, thumbWebp, urlLabel, type Project } from "../_data/projects";
 
 const GAP = 18;
 const pad = (n: number) => String(n).padStart(2, "0");
@@ -69,7 +68,10 @@ export default function Carousel({ items }: { items: Project[] }) {
             <article className="car-card" key={p.slug}>
               <a href={p.href} target="_blank" rel="noopener" aria-label={`${p.name} (opens live site)`}>
                 <div className="shot">
-                  <img src={thumb(p.slug)} alt="" loading="lazy" width={640} height={400} />
+                  <picture>
+                    <source type="image/webp" srcSet={thumbWebp(p.slug)} />
+                    <img src={thumb(p.slug)} alt="" loading="lazy" decoding="async" width={640} height={400} />
+                  </picture>
                 </div>
               </a>
               <div className="row">
