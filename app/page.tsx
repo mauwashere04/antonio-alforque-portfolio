@@ -12,7 +12,10 @@ export const metadata: Metadata = {
   title: "Antonio Alforque — Live sites, not case-study theatre",
   description:
     "Web developer in Manila. 51 projects — WordPress, Shopify, custom systems and GoHighLevel — shown as live URLs.",
+  alternates: { canonical: "/" },
   openGraph: {
+    url: "/",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Antonio Alforque, web developer in Manila" }],
     title: "Antonio Alforque — Live sites, not case-study theatre",
     description:
       "Web developer in Manila. 51 projects — WordPress, Shopify, custom systems and GoHighLevel — shown as live URLs.",

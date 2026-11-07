@@ -3,7 +3,15 @@ import Link from "next/link";
 import InquireWizard from "../_components/InquireWizard";
 
 export const metadata: Metadata = {
-  title: "Inquire — Antonio Alforque",
+  title: { absolute: "Inquire — Antonio Alforque" },
+  description: "Start a web project with Antonio Alforque: WordPress, Shopify, GoHighLevel or a custom build. Four quick steps.",
+  alternates: { canonical: "/inquire" },
+  openGraph: {
+    url: "/inquire",
+    title: "Inquire — Antonio Alforque",
+    description: "Start a web project with Antonio Alforque: WordPress, Shopify, GoHighLevel or a custom build.",
+    images: [{ url: "/og.png", width: 1200, height: 630 }],
+  },
 };
 
 export default function InquirePage() {
